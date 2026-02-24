@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Upgrade Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Memory Upgrade Game</h1>
+      <p>Zapamiętaj obraz, odtwórz go i osiągnij <strong>90%</strong> zgodności.</p>
+    </header>
+
+    <section class="hud">
+      <div><span>Poziom:</span> <strong id="level">1</strong></div>
+      <div>
+        <span>Wybierz odblokowany poziom:</span>
+        <select id="levelSelect"></select>
+      </div>
+      <div><span>Pozostały czas podglądu:</span> <strong id="timer">0</strong>s</div>
+      <div><span>Ostatni wynik:</span> <strong id="score">-</strong></div>
+      <button id="startBtn">Start rundy</button>
+      <button id="submitBtn" disabled>Zatwierdź odtworzony obraz</button>
+      <button id="surrenderBtn" disabled>Poddaję się</button>
+    </section>
+
+    <section class="board-wrap">
+      <div>
+        <h2>Wzór (pokazywany chwilowo)</h2>
+        <canvas id="targetCanvas" width="480" height="480"></canvas>
+      </div>
+      <div>
+        <h2>Twoja tablica</h2>
+        <canvas id="playerCanvas" width="480" height="480"></canvas>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div>
+        <h3>Typ obiektu</h3>
+        <div class="chips" id="typeChips"></div>
+      </div>
+      <div>
+        <h3>Kolor</h3>
+        <div class="chips" id="colorChips"></div>
+      </div>
+      <div>
+        <h3>Cyfra dla obiektu NUM</h3>
+        <div class="chips" id="numberChips"></div>
+      </div>
+      <button id="eraseBtn">Gumka (usuń z pola)</button>
+    </section>
+
+    <p id="message" class="message"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
